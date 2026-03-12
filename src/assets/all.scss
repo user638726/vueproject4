@@ -1,0 +1,13 @@
+@import "bootstrap/scss/functions";
+
+// 你的變數覆寫（只寫 $xxx: ...;）
+@import "./helpers/variables";
+@import "./helpers/variables-dark";
+
+// Bootstrap 必要依賴順序
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Bootstrap 全包（先用這個驗證）
+@import "bootstrap/scss/bootstrap";
