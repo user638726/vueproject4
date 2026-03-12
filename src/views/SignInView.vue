@@ -33,6 +33,8 @@
 </template>
 
 <script lang="ts">
+import router from "../router";
+
 export default {
   data() {
     return {
@@ -49,12 +51,12 @@ export default {
       // 在這裡處理登入邏輯
 
       const api = `${import.meta.env.VITE_API}create-account`;
-      this.$http.post(api,this.user).then((res) => {
-         console.log(res);
-        if (res.data.message == "帳號建立成功") {
+      this.$http.post(api, this.user).then((res) => {
+        console.log(res);
+        if (res.data.message === "帳號建立成功") {
           const { id } = res.data;
           document.cookie = `hexToken=${id};`;
-          this.$router.push("./dashboard");
+          router.push("/dashboard");
         }
       });
     },
